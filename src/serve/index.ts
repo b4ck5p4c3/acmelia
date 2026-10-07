@@ -51,7 +51,14 @@ export function serve (configPath = 'acmelia.yaml'): void {
       .json({ error: 'Internal Server Error' })
   })
 
-  app.listen(environment.PORT, environment.HOST, () => {
+  const server = app.listen(environment.PORT, environment.HOST, () => {
     logger.info(`Acmelia is running at ${environment.HOST}:${environment.PORT}`)
+  })
+
+  process.on('SIGINT', () => {
+    logger.info('SIGINT received, shutting down...')
+    server.close(() => {
+      process.exit()
+    })
   })
 }

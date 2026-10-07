@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
 ## Install deps
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
 ## Test & compile
