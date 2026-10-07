@@ -4,7 +4,7 @@ Acmelia is an implementation of acmeproxy protocol to use with Cloudflare for AC
 
 ## Usage
 
-1. Use [./examples/acmelia.yaml](./examples/acmelia.yaml) file as a reference to create your own acmelia configuration.
+1. Use [./examples/acmelia.yaml](examples/acmelia.yaml) file as a reference to create your own acmelia configuration.
 
 2. Generate new credentials using `bunx https://github.com/b4ck5p4c3/acmelia.git#main genkey` command
 
