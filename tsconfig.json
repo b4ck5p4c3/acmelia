@@ -1,0 +1,14 @@
+{
+  "extends": "@bksp/style-guide/typescript",
+  "compilerOptions": {
+    "target": "ES2025",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "types": ["bun-types"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

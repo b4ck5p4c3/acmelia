@@ -1,0 +1,22 @@
+zones:
+  # Internal zone, delegated.
+  - name: int.bksp.in
+    delegated: int.acme-delegated.bksp.in
+    cloudflareZoneId: 0123456789abcdef0123456789abcdef
+
+  # Service zone, delegated.
+  - name: svc.bksp.in
+    delegated: svc.acme-delegated.bksp.in
+    cloudflareZoneId: 0123456789abcdef0123456789abcdef
+
+  # Test zone, not delegated.
+  # Records will be created directly in this zone.
+  - name: test.bksp.in
+    cloudflareZoneId: 0123456789abcdef0123456789abcdef
+tokens:
+  - id: 00000000-0000-0000-0000-000000000000
+    secret: $argon2id$...
+    domains:
+      # Due to the nature of DNS-01, both single and wildcard certificates could be requested for the same domain.
+      - my-awesome-service.svc.bksp.in
+      - hi.test.bksp.in
