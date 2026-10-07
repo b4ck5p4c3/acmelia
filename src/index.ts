@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { genkey } from '@/cli/genkey'
 
 import { serve } from './serve'
